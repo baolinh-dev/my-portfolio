@@ -1,10 +1,17 @@
-import React from 'react';
-const App = () => {
+import { Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './routes';
+
+function App() {
     return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
+        <>
+            <Routes>
+                {publicRoutes.map((route, index) => {
+                    const Page = route.component;
+                    return <Route key={index} path={route.path} element={<Page />} />;
+                })}
+            </Routes>
+        </>
     );
-};
+}
 
 export default App;
