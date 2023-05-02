@@ -1,16 +1,20 @@
-import { Routes, Route } from 'react-router-dom';
-import { publicRoutes } from './routes';
+import Header from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
     return (
-        <>
-            <Routes>
-                {publicRoutes.map((route, index) => {
-                    const Page = route.component;
-                    return <Route key={index} path={route.path} element={<Page />} />;
-                })}
-            </Routes>
-        </>
+        <div className="root">
+            <Header />
+            <Home />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+        </div>
     );
 }
 
