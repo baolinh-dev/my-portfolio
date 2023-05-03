@@ -29,3 +29,6 @@ a {
     text-decoration: none;
     color: #1f1f1f;
 }
+.active { 
+    border-bottom: 4px solid var(--primary);
+}
