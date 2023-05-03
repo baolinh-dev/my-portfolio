@@ -4,11 +4,13 @@ const cx = classNames.bind(styles);
 
 function Header() {
     return (
-        <header>
+        <header className={cx('header')}>
+            {/* Logo */}
             <div className={cx('logo')}>
                 {/* <img /> */}
                 Logo
             </div>
+            {/* Navigation */}
             <nav className={cx('nav')}>
                 <ul>
                     <li>

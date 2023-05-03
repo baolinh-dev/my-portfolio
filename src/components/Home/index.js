@@ -1,11 +1,26 @@
+import Typewriter from 'typewriter-effect';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-const cx = classNames.bind(styles); 
+import MyParticles from '../MyParticles';
+const cx = classNames.bind(styles);
 
 function Home() {
     return (
         <div className={cx('home')} id="home">
-            <h1>Home Page</h1>
+            <div className={cx('infor')}> 
+                <p className={cx('greeting')}>Hi,</p> 
+                <p className={cx('introduce')}>I'm, <span className={cx('name')}>Tran Bao Linh</span>  </p>  
+                <Typewriter
+                    className={cx('auto-write-text')}
+                    options={{
+                        strings: ['Intern Web Developer', 'a Second-year student at VKU'],
+                        autoStart: true,
+                        loop: true,
+                    }}
+                />
+            </div>
+
+            <img className={cx('avatar')} src="https://baolinh-dev.github.io/portfolio/assets/imgs/avatar.jpg" />
         </div>
     );
 }
