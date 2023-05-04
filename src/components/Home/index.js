@@ -1,7 +1,7 @@
 import Typewriter from 'typewriter-effect';
+import Button from '../Common/Button';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import MyParticles from '../Common/MyParticles';
 const cx = classNames.bind(styles);
 
 function Home() {
@@ -17,7 +17,8 @@ function Home() {
                         autoStart: true,
                         loop: true,
                     }}
-                />
+                /> 
+                <Button>Contact</Button> 
             </div>
 
             <img className={cx('avatar')} src="https://baolinh-dev.github.io/portfolio/assets/imgs/avatar.jpg" />
