@@ -9,11 +9,12 @@
     display: flex; 
     justify-content: space-around;
 }  
-.infor { 
+.infor {  
     width: calc(100% - 780px); 
     font-size: 52px; 
     font-weight: 800;
-} 
+}  
+
 .name { 
     color: var(--primary);
 }
@@ -27,4 +28,18 @@
     height: 400px; 
     border-radius: 50%; 
     border: 1px solid #ddd;
+}   
+.socials { 
+    position: absolute; 
+    bottom: 0; 
+    left: 80;
+}
+.socials svg {  
+    font-size: 40px;
+    margin-right: 20px; 
+    transition: color 0.2s ease-in-out; 
+    cursor: pointer;
 } 
+.socials svg:hover { 
+    color: var(--primary);
+}
