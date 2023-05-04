@@ -1,7 +1,7 @@
 import Typewriter from 'typewriter-effect';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import MyParticles from '../MyParticles';
+import MyParticles from '../Common/MyParticles';
 const cx = classNames.bind(styles);
 
 function Home() {
