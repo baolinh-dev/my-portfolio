@@ -1,0 +1,30 @@
+.skills {
+    height: 100vh;
+    margin-top: var(--height-header);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 80px;
+
+    li {
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+        font-weight: 600;
+        font-size: 20px;
+        list-style: none;
+        margin-top: 12px;
+        width: 48%; /* sử dụng chiều rộng 48% để tạo hai cột */
+    }
+}
+.list li img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}

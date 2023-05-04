@@ -7,8 +7,8 @@ function About() {
         <div className={cx('about')} id="about">
             <Title content="About" />
             <div className={cx('about-wrapper')}>
-                <img src="https://baolinh-dev.github.io/portfolio/assets/imgs/about-image.jpg" />
-                <div className={cx('about-infor')}>
+                <img data-aos="fade-right" src="https://baolinh-dev.github.io/portfolio/assets/imgs/about-image.jpg" />
+                <div data-aos="fade-left" className={cx('about-infor')}>
                     <h2>Tran Bao Linh</h2>
                     <p>
                         Hard working software engineering student from Zenica in my third and final year. I'm also a
