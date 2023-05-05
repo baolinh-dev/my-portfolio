@@ -1,9 +1,15 @@
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
-function Button({children}) {
-    return (   
-        <a className={cx('button')}>{children}</a>
+function Button({ href, children }) {
+    return (
+        <a
+            href={href}
+            className={cx('button')} 
+            download
+        >
+            {children}
+        </a>
     );
 }
 

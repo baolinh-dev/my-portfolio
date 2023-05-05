@@ -1,0 +1,19 @@
+.projects {  
+
+}  
+.projects-button { 
+    display: flex; 
+    justify-content: center;
+    a { 
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 16px; 
+        font-weight: 600;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        background-color: var(--primary);
+        cursor: pointer;
+    }
+}
