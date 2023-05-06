@@ -8,29 +8,32 @@
     z-index: 9999999;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);  
     background-color: #ffffff;
-}
-.logo {
-    height: 100%;
-    line-height: var(--height-header);
-}
-.nav {
-    height: var(--height-header);
-}
-
-.nav ul {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.nav ul li {
-    list-style: none;
-    text-align: center;
-}
-.nav ul li a {
-    padding: 16px;
-    font-weight: 600;
-    position: relative;
-    margin-right: 20px;
-}
-
+  
+    .logo {
+      height: 100%;
+      line-height: var(--height-header);
+    }
+  
+    .nav {
+      height: var(--height-header);
+  
+      ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+  
+        li {
+          list-style: none;
+          text-align: center;
+  
+          a {
+            padding: 16px;
+            font-weight: 600;
+            position: relative;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  

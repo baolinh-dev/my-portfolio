@@ -1,6 +1,7 @@
 {
   "name": "my-portfolio",
-  "version": "0.1.0",
+  "version": "0.1.0", 
+  "homepage": "https://baolinh-dev.github.io/my-portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -16,7 +17,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test"
+    "test": "react-app-rewired test", 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +47,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "classnames": "^2.3.2",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^5.0.0",
     "normalize.css": "^8.0.1",
     "react-app-rewired": "^2.2.1",
     "react-scroll": "^1.8.9",
