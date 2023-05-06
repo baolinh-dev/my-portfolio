@@ -12,10 +12,7 @@ function Projects() {
             <ProjectContent
                 content="Viet Nam Football"
                 infor="
-                Vietnam football is a website that aims to promote Vietnamese
-                football to domestic and foreign tourists as well as trade in
-                Vietnamese football related goods. The website provieders a
-                beautiful and user-friendly interface
+                Vietnam Football is a website that promotes Vietnamese football and sells football-related goods. Its beautiful and user-friendly interface makes it easy for visitors to browse the latest news, schedules, and results of Vietnamese football matches, as well as shop for merchandise. It's a great resource for fans, tourists, and traders interested in Vietnamese football and culture.
               "
                 imgSrc="https://baolinh-dev.github.io/portfolio/assets/imgs/vietnam.gif"
                 images={[
@@ -30,10 +27,7 @@ function Projects() {
                 revert
                 content="Panagea Travel"
                 infor="
-                Panagea Travel là trang web giới thiệu về du lịch Việt Nam. Những
-                điểm điểm du lịch hổi tiếng của Việt Nam như Vịnh Hạ Long, Phố Cổ
-                Hội An, .... The website provieders a beautiful and user-friendly
-                interface  
+                Panagea Travel is much more than just a simple travel website. It's a comprehensive resource that not only introduces some of the most famous tourist destinations in Vietnam but also provides visitors with a wealth of information about the country's rich culture, history, and local customs. The website's beautiful and user-friendly interface makes it easy for anyone to navigate and discover all that Vietnam has to offer. Whether you're planning your first trip to Vietnam or you're a seasoned traveler looking for new adventures, Panagea Travel is the perfect starting point.  
               "
                 imgSrc="https://baolinh-dev.github.io/portfolio/assets/imgs/travel.gif"
                 images={[
@@ -47,10 +41,7 @@ function Projects() {
             <ProjectContent
                 content="Tea House"
                 infor="
-                Teahouse is a website that commerce tea-related drinks such as
-                milk tea, peach tea, lemon tea The website has an admin page used
-                to manage products, manage orders ..., a user page to order,
-                contact, ...  
+                Teahouse is more than just an e-commerce website that sells tea-related drinks. It's a platform that connects tea enthusiasts with high-quality and delicious tea blends. The website offers a wide variety of tea-based drinks, including milk tea, peach tea, and lemon tea, all of which are carefully crafted to deliver a satisfying and refreshing experience. 
               "
                 imgSrc="https://baolinh-dev.github.io/portfolio/assets/imgs/teahouse.gif"
                 images={[

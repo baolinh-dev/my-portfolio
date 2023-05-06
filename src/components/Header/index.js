@@ -17,7 +17,6 @@ function Header() {
             const currentPosition = window.scrollY;
             const homeElement = document.getElementById('home');
             const aboutElement = document.getElementById('about');
-            const skillsElement = document.getElementById('skills');
             const projectsElement = document.getElementById('projects');
             const contactElement = document.getElementById('contact');
 
@@ -31,11 +30,6 @@ function Header() {
                 aboutElement.offsetTop + aboutElement.offsetHeight > currentPosition
             ) {
                 setActiveSection('about');
-            } else if (
-                skillsElement.offsetTop <= currentPosition &&
-                skillsElement.offsetTop + skillsElement.offsetHeight > currentPosition
-            ) {
-                setActiveSection('skills');
             } else if (
                 projectsElement.offsetTop <= currentPosition &&
                 projectsElement.offsetTop + projectsElement.offsetHeight > currentPosition
@@ -73,11 +67,6 @@ function Header() {
                     <li>
                         <a href="#about" onClick={handleClick} className={activeSection === 'about' ? 'active' : ''}>
                             About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#skills" onClick={handleClick} className={activeSection === 'skills' ? 'active' : ''}>
-                            Skills
                         </a>
                     </li>
                     <li>
