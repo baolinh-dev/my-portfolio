@@ -54,7 +54,10 @@ function Header() {
             {/* Logo */}
             <div className={cx('logo')}>
                 {/* <img /> */}
-                Logo
+                <img
+                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/0ac9da052776ae0ebf5b20444a124367~c5_100x100.jpeg?x-expires=1683554400&x-signature=BqQGyGCPTZiM44X%2BFTDZWfc1RrQ%3D"
+                    alt="logo"
+                />
             </div>
             {/* Navigation */}
             <nav className={cx('nav')}>

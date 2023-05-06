@@ -12,7 +12,7 @@ function Home() {
             <div className={cx('infor')}>
                 <p className={cx('greeting')}>Hi,</p>
                 <p className={cx('introduce')}>
-                    I'm, <span className={cx('name')}>Tran Bao Linh</span>{' '}
+                    I'm <span className={cx('name')}>Tran Bao Linh</span>{' '}
                 </p>
                 <Typewriter
                     className={cx('auto-write-text')}
