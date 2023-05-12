@@ -54,7 +54,7 @@ function Projects() {
                 liveDemo="https://baolinh-dev.github.io/vietnam-football/"
             />
             <div className={cx('projects-button')}>
-                <Button href="https://drive.google.com/uc?export=download&id=10U_DSqyYIa8dtKWAHSvp_jguCZ78tyjq">
+                <Button download href="https://drive.google.com/uc?export=download&id=10U_DSqyYIa8dtKWAHSvp_jguCZ78tyjq">
                     Download CV
                 </Button>
             </div>

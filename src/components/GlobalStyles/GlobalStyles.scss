@@ -4,7 +4,38 @@
 :root {
     --primary: #fe2c55;
     --height-header: 63px; 
+
+    --background-light: #fff;
+    --text-light: #1c1c1c; 
+
+    --background-dark: #0c0c0c;
+    --text-dark: #ececec; 
+
+    --background-dark-header: #1f1f1f;
+    --text-dark-header: #ececec; 
 }
+
+// light/dark modde
+body.light {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+} 
+
+#header.dark-header {
+    background-color: var(--background-dark-header);
+    color: var(--text-dark-header);
+}   
+
+#header a.dark-header {
+    background-color: var(--background-dark-header);
+    color: var(--text-dark-header);
+}  
+
 
 * {
     box-sizing: border-box;
@@ -15,7 +46,6 @@
 html {
     font-size: 62.5%;
 }
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -29,9 +59,9 @@ a {
     text-decoration: none;
     color: #1f1f1f;
 }
-.active { 
+.active {
     border-bottom: 4px solid var(--primary);
-} 
+}
 .revert {
     flex-direction: row-reverse;
 }

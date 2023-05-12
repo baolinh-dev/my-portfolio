@@ -1,12 +1,18 @@
 import Typewriter from 'typewriter-effect';
+import { animateScroll as scroll } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Button from '../Common/Button';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function Home() {
+    const contactElement = document.getElementById('contact');
+    const handleScrollToContact = () => {
+        scroll.scrollTo(contactElement.offsetTop);
+    };
     return (
         <div className={cx('home')} id="home">
             <div className={cx('infor')}>
@@ -22,14 +28,22 @@ function Home() {
                         loop: true,
                     }}
                 />
-                <Button className={cx('infor-button')}>Contact</Button>
+                <Button className={cx('infor-button')} href="#contact" onClick={handleScrollToContact}>
+                    Contact
+                </Button>
                 <div className={cx('socials')}>
-                    <a href='https://github.com/baolinh-dev' target='_blank'>
+                    <a href="https://github.com/baolinh-dev" target="_blank">
                         <FontAwesomeIcon icon={faGithub} />
-                    </a> 
-                    <a href='https://www.facebook.com/linkdarealest/' target='_blank'>
+                    </a>
+                    <a href="https://www.facebook.com/linkdarealest/" target="_blank">
                         <FontAwesomeIcon icon={faFacebook} />
                     </a>
+                    <div className={cx('phones')}>
+                        <a href="tel:84-0768494121" target="_blank">
+                            <p>Call me now: (+84) 768494121</p>
+                            
+                        </a>
+                    </div>
                 </div>
             </div>
 
