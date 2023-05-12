@@ -27,7 +27,6 @@ function DarkModeToggle({ onClick }) {
                 onChange={handleToggleChange} 
             /> 
             <span className={cx('text')}>{isDarkMode ? 'Light mode' : 'Dark mode'}</span>
-            <button onClick={handleToggleChange}>{isDarkMode ? 'Light mode' : 'Dark mode'}</button>
         </div>
     );
 }
