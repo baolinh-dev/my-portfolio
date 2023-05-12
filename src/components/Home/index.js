@@ -24,9 +24,12 @@ function Home() {
                 />
                 <Button className={cx('infor-button')}>Contact</Button>
                 <div className={cx('socials')}>
-                    <FontAwesomeIcon icon={faGithub} /> 
-                    <FontAwesomeIcon icon={faFacebook} /> 
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <a href='https://github.com/baolinh-dev' target='_blank'>
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a> 
+                    <a href='https://www.facebook.com/linkdarealest/' target='_blank'>
+                        <FontAwesomeIcon icon={faFacebook} />
+                    </a>
                 </div>
             </div>
 

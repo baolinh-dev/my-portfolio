@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const [activeSection, setActiveSection] = useState('');
+    const [activeSection, setActiveSection] = useState('home');
 
     const handleClick = (event) => {
         const section = event.target.hash.substr(1);
@@ -14,12 +14,13 @@ function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentPosition = window.scrollY;
             const homeElement = document.getElementById('home');
             const aboutElement = document.getElementById('about');
             const projectsElement = document.getElementById('projects');
-            const contactElement = document.getElementById('contact');
-
+            const contactElement = document.getElementById('contact');  
+            const headerElement = document.getElementById('header'); 
+            const currentPosition = window.scrollY + headerElement.offsetHeight;
+            console.log(currentPosition);
             if (
                 homeElement.offsetTop <= currentPosition &&
                 homeElement.offsetTop + homeElement.offsetHeight > currentPosition
@@ -37,7 +38,7 @@ function Header() {
                 setActiveSection('projects');
             } else if (
                 contactElement.offsetTop <= currentPosition &&
-                contactElement.offsetTop + contactElement.offsetHeight > currentPosition
+                contactElement.offsetTop + contactElement.offsetHeight  > currentPosition 
             ) {
                 setActiveSection('contact');
             }
@@ -50,14 +51,11 @@ function Header() {
     }, []);
 
     return (
-        <header className={cx('header')}>
+        <header id='header' className={cx('header')}>
             {/* Logo */}
             <div className={cx('logo')}>
                 {/* <img /> */}
-                <img
-                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/0ac9da052776ae0ebf5b20444a124367~c5_100x100.jpeg?x-expires=1683554400&x-signature=BqQGyGCPTZiM44X%2BFTDZWfc1RrQ%3D"
-                    alt="logo"
-                />
+                <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
             </div>
             {/* Navigation */}
             <nav className={cx('nav')}>

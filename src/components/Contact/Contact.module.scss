@@ -1,5 +1,6 @@
-.contact { 
-    height: 100vh; 
+.contact {  
+    border-top: 1px solid #ddd;
+    height: calc(100vh); 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
