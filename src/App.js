@@ -19,13 +19,13 @@ function App() {
             document.body.classList.add('dark');
             header.classList.add('dark-header');
             links.forEach((link) => {
-                link.classList.add('dark-header');
+                link.classList.add('dark-header-link');
             });
         } else {
             document.body.classList.remove('dark');
             header.classList.remove('dark-header');
             links.forEach((link) => {
-                link.classList.remove('dark-header');
+                link.classList.remove('dark-header-link');
             });
         }
     }, [isDarkMode]);
