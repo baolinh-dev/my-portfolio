@@ -85,7 +85,7 @@ function Header() {
                         <a
                             href="#home"
                             onClick={handleClick}
-                            className={`${activeSection === 'home' ? 'active' : ''}${isDarkMode ? ' dark-header' : ''}`}
+                            className={`${activeSection === 'home' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
                         >
                             Home
                         </a>
@@ -94,7 +94,7 @@ function Header() {
                         <a
                             href="#about"
                             onClick={handleClick}
-                            className={`${activeSection === 'about' ? 'active' : ''}${isDarkMode ? ' dark-header' : ''}`}
+                            className={`${activeSection === 'about' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
                         >
                             About
                         </a>
@@ -103,7 +103,7 @@ function Header() {
                         <a
                             href="#projects"
                             onClick={handleClick}
-                            className={`${activeSection === 'projects' ? 'active' : ''}${isDarkMode ? ' dark-header' : ''}`}
+                            className={`${activeSection === 'projects' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
                         >
                             Projects
                         </a>
@@ -112,7 +112,7 @@ function Header() {
                         <a
                             href="#contact"
                             onClick={handleClick}
-                            className={`${activeSection === 'contact' ? 'active' : ''}${isDarkMode ? ' dark-header' : ''}`}
+                            className={`${activeSection === 'contact' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
                         >
                             Contact
                         </a>
