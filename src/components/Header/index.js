@@ -1,3 +1,4 @@
+import Toggle from 'react-toggle';
 import { useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
@@ -9,19 +10,49 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+    
+    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode') === 'true' ? true : false);
     const [activeSection, setActiveSection] = useState('home');
     const [homeElement, setHomeElement] = useState(null);
     const [aboutElement, setAboutElement] = useState(null);
     const [projectsElement, setProjectsElement] = useState(null);
     const [contactElement, setContactElement] = useState(null);
-    const [headerElement, setHeaderElement] = useState(null);  
+    const [headerElement, setHeaderElement] = useState(null);
 
-    const [isNavOpen, setIsNavOpen] = useState(false); 
+    const [isNavOpen, setIsNavOpen] = useState(false);
 
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
-      };
+    }; 
+
+
+    useEffect(() => {
+        localStorage.setItem('isDarkMode', isDarkMode);
+    }, [isDarkMode]); 
+
+    useEffect(() => { 
+        const header = document.querySelector('#header');  
+        const links = header.querySelectorAll('a');
+
+        if (isDarkMode) {
+            document.body.classList.add('dark');
+            header.classList.add('dark-header');
+            links.forEach((link) => {
+                link.classList.add('dark-header-link');
+            });
+        } else {
+            document.body.classList.remove('dark');
+            header.classList.remove('dark-header');
+            links.forEach((link) => {
+                link.classList.remove('dark-header-link');
+            });
+        }
+    }, [isDarkMode]);
+
+    function handleToggleChange() {
+        setIsDarkMode(!isDarkMode);
+        
+    }
 
     // Responsive
     const isPC = useMediaQuery({
@@ -153,12 +184,17 @@ function Header() {
                                 </a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> 
+                    {/* Dark / Light Mode */}
+                    <div className={cx('dark-mode-toggle')}>
+                        <Toggle defaultChecked={isDarkMode} icons={false} onChange={handleToggleChange} />
+                        <span className={cx('text')}>{isDarkMode ? 'Light ' : 'Dark '}</span>
+                    </div>
                 </header>
             ) : (
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
-                        <FontAwesomeIcon icon={faBars} onClick={handleNavToggle}/>
+                        <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />
                         <nav className={cx('nav', `nav ${isNavOpen ? 'nav-open' : ''}`)}>
                             <ul>
                                 <li>
