@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
+import { useMediaQuery } from 'react-responsive';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +15,30 @@ function Header() {
     const [aboutElement, setAboutElement] = useState(null);
     const [projectsElement, setProjectsElement] = useState(null);
     const [contactElement, setContactElement] = useState(null);
-    const [headerElement, setHeaderElement] = useState(null);
+    const [headerElement, setHeaderElement] = useState(null);  
+
+    const [isNavOpen, setIsNavOpen] = useState(false); 
+
+    const handleNavToggle = () => {
+        setIsNavOpen(!isNavOpen);
+      };
+
+    // Responsive
+    const isPC = useMediaQuery({
+        query: '(min-width: 1024px)',
+    });
+
+    const isPCandTable = useMediaQuery({
+        query: '(min-width: 768px)',
+    });
+
+    const isTablet = useMediaQuery({
+        query: '(min-width: 768px) and (max-width: 1023px)',
+    });
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 767px)',
+    });
 
     const handleClick = (event) => {
         const section = event.target.hash.substr(1);
@@ -72,54 +98,125 @@ function Header() {
     }, [homeElement, aboutElement, projectsElement, contactElement, headerElement]);
 
     return (
-        <header id="header" className={cx('header')}>
-            {/* Logo */}
-            <div className={cx('logo')}>
-                {/* <img /> */}
-                <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
-            </div>
-            {/* Navigation */}
-            <nav className={cx('nav')}>
-                <ul>
-                    <li>
-                        <a
-                            href="#home"
-                            onClick={handleClick}
-                            className={`${activeSection === 'home' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
-                        >
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#about"
-                            onClick={handleClick}
-                            className={`${activeSection === 'about' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
-                        >
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#projects"
-                            onClick={handleClick}
-                            className={`${activeSection === 'projects' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
-                        >
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            onClick={handleClick}
-                            className={`${activeSection === 'contact' ? 'active' : ''}${isDarkMode ? ' dark-header-link' : ''}`}
-                        >
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <>
+            {isPCandTable ? (
+                <header id="header" className={cx('header')}>
+                    {/* Logo */}
+                    <div className={cx('logo')}>
+                        <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
+                    </div>
+                    {/* Navigation */}
+                    <nav className={cx('nav')}>
+                        <ul>
+                            <li>
+                                <a
+                                    href="#home"
+                                    onClick={handleClick}
+                                    className={`${activeSection === 'home' ? 'active' : ''}${
+                                        isDarkMode ? ' dark-header-link' : ''
+                                    }`}
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#about"
+                                    onClick={handleClick}
+                                    className={`${activeSection === 'about' ? 'active' : ''}${
+                                        isDarkMode ? ' dark-header-link' : ''
+                                    }`}
+                                >
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#projects"
+                                    onClick={handleClick}
+                                    className={`${activeSection === 'projects' ? 'active' : ''}${
+                                        isDarkMode ? ' dark-header-link' : ''
+                                    }`}
+                                >
+                                    Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#contact"
+                                    onClick={handleClick}
+                                    className={`${activeSection === 'contact' ? 'active' : ''}${
+                                        isDarkMode ? ' dark-header-link' : ''
+                                    }`}
+                                >
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+            ) : (
+                <header id="header" className={cx('header-mobile')}>
+                    <div className={cx('menu-mobile')}>
+                        <FontAwesomeIcon icon={faBars} onClick={handleNavToggle}/>
+                        <nav className={cx('nav', `nav ${isNavOpen ? 'nav-open' : ''}`)}>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="#home"
+                                        onClick={handleClick}
+                                        className={`${activeSection === 'home' ? 'active' : ''}${
+                                            isDarkMode ? ' dark-header-link' : ''
+                                        }`}
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#about"
+                                        onClick={handleClick}
+                                        className={`${activeSection === 'about' ? 'active' : ''}${
+                                            isDarkMode ? ' dark-header-link' : ''
+                                        }`}
+                                    >
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#projects"
+                                        onClick={handleClick}
+                                        className={`${activeSection === 'projects' ? 'active' : ''}${
+                                            isDarkMode ? ' dark-header-link' : ''
+                                        }`}
+                                    >
+                                        Projects
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#contact"
+                                        onClick={handleClick}
+                                        className={`${activeSection === 'contact' ? 'active' : ''}${
+                                            isDarkMode ? ' dark-header-link' : ''
+                                        }`}
+                                    >
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className={cx('logo-mobile')}>
+                        <div className={cx('logo')}>
+                            <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
+                        </div>
+                    </div>
+                    <div></div>
+                </header>
+            )}
+        </>
     );
 }
 

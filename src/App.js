@@ -12,7 +12,8 @@ function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     useEffect(() => { 
         AOS.init({ duration: 1000 });
-        const header = document.querySelector('#header');
+        const header = document.querySelector('#header'); 
+        const headerMobile = document.querySelector('.header-mobile');  
         const links = header.querySelectorAll('a');
 
         if (isDarkMode) {
