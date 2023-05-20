@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'; 
 import classNames from 'classnames/bind';
 import styles from './ProjectContent.module.scss';
-import { faShare, faShareAlt, faShareAltSquare } from '@fortawesome/free-solid-svg-icons';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -10,7 +10,7 @@ function ProjectContent({ content, infor, imgSrc, images, revert, sourceCode, li
     return (
         <div className={cx('project-content', { revert: revert })}>
             <div className={cx('project-img')} data-aos={revert ? 'fade-left' : 'fade-right'}>
-                <img src={imgSrc} alt="" />
+                <img src={imgSrc} alt="" /> 
             </div>
             <div className={cx('project-infor')} data-aos={revert ? 'fade-right' : 'fade-left'}>
                 <h2>{content}</h2>

@@ -53,8 +53,27 @@ function Projects() {
                 sourceCode="https://github.com/baolinh-dev/tea-house-full"
                 liveDemo="https://baolinh-dev.github.io/vietnam-football/"
             />
+            <ProjectContent
+                revert
+                content="Pizza App"
+                infor="
+                This project is a cross-platform Java app with an admin web interface built using ReactJS. The app is an e-commerce platform for online pizza ordering. Users can browse through the menu, customize their pizza orders, and make payments securely through the app. The admin web interface allows the restaurant staff to manage orders, update the menu, and track inventory. The app is designed to be user-friendly and responsive, with a clean and modern interface. It is compatible with multiple platforms, including desktop and mobile devices.
+              "
+                imgSrc="https://baolinh-dev.github.io/portfolio/assets/imgs/pizza.gif"
+                images={[
+                    'https://img.icons8.com/plasticine/100/null/react.png', 
+                    'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-64.png',
+                    'https://img.icons8.com/color/48/null/mysql-logo.png', 
+                    'https://img.icons8.com/color/48/null/sass.png'
+                ]}
+                sourceCode="https://github.com/baolinh-dev/panagea-travel"
+                liveDemo="https://baolinh-dev.github.io/panagea-travel/"
+            />
             <div className={cx('projects-button')}>
-                <Button download href="https://drive.google.com/uc?export=download&id=10U_DSqyYIa8dtKWAHSvp_jguCZ78tyjq">
+                <Button
+                    download
+                    href="https://drive.google.com/uc?export=download&id=10U_DSqyYIa8dtKWAHSvp_jguCZ78tyjq"
+                >
                     Download CV
                 </Button>
             </div>
