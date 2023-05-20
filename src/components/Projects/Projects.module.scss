@@ -1,13 +1,13 @@
-.projects {  
-
-}  
-.projects-button { 
-    display: flex; 
+.projects {
+    padding-top: calc(var(--height-header) + 20px);
+}
+.projects-button {
+    display: flex;
     justify-content: center;
-    a { 
+    a {
         display: inline-block;
         padding: 12px 40px;
-        font-size: 16px; 
+        font-size: 16px;
         font-weight: 600;
         color: #fff;
         outline: none;
