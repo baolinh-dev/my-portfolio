@@ -5,7 +5,7 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Button from '../Common/Button';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+
 const cx = classNames.bind(styles);
 
 function Home() {
@@ -20,14 +20,16 @@ function Home() {
                 <p className={cx('introduce')}>
                     I'm <span className={cx('name')}>Tran Bao Linh</span>{' '}
                 </p>
-                <Typewriter
-                    className={cx('auto-write-text')}
-                    options={{
-                        strings: ['Intern Web Developer', 'a Second-year student at VKU'],
-                        autoStart: true,
-                        loop: true,
-                    }}
-                />
+                <div className={cx('auto-write-wrapper')}>
+                    <Typewriter
+                        className={cx('auto-write')}
+                        options={{
+                            strings: ['Intern Web Developer', 'a Second-year student'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
+                </div>
                 <Button className={cx('infor-button')} href="#contact" onClick={handleScrollToContact}>
                     Contact
                 </Button>
@@ -41,13 +43,13 @@ function Home() {
                     <div className={cx('phones')}>
                         <a href="tel:84-0768494121" target="_blank">
                             <p>Call me now: (+84) 768494121</p>
-                            
                         </a>
                     </div>
                 </div>
             </div>
-
-            <img className={cx('avatar')} src="https://baolinh-dev.github.io/portfolio/assets/imgs/avatar.jpg" />
+            <div className={cx('avatar')}>
+                <img src="https://baolinh-dev.github.io/portfolio/assets/imgs/avatar.jpg" />
+            </div>
         </div>
     );
 }
