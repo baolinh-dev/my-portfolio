@@ -2,11 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'; 
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import styles from './ProjectContent.module.scss';
+import styles from './ProjectSliderItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ProjectContent({ content, infor, imgSrc, images, revert, sourceCode, liveDemo }) { 
+function ProjectSliderItem({ content, infor, imgSrc, images, revert, sourceCode, liveDemo }) { 
     return (
         <div className={cx('project-content', { revert: revert })}>
             <div className={cx('project-img')} data-aos={revert ? 'fade-left' : 'fade-right'}>
@@ -45,4 +45,4 @@ function ProjectContent({ content, infor, imgSrc, images, revert, sourceCode, li
     );
 }
 
-export default ProjectContent;
+export default ProjectSliderItem;

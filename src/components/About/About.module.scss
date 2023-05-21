@@ -70,7 +70,13 @@
                 display: none;
             } 
             .about-infor { 
-                width: 100%;
+                width: 100%; 
+                h2 { 
+                    font-size: 20px;
+                } 
+                p { 
+                    font-size: 16px;
+                }
             }
         } 
     }

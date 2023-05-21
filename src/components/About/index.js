@@ -19,7 +19,7 @@ const skills = [
 function About() {
     return (
         <div className={cx('about')} id="about">
-            <Title content="About" />
+            <Title content="About"/>
             <div className={cx('about-wrapper')}>
                 <img data-aos="fade-right" src="https://baolinh-dev.github.io/portfolio/assets/imgs/about-image.jpg" />
                 <div data-aos="fade-left" className={cx('about-infor')}>

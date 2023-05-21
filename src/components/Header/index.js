@@ -1,4 +1,3 @@
-import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 import { useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
@@ -20,15 +19,7 @@ function Header() {
     const [headerElement, setHeaderElement] = useState(null);
     const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
     const [isNavOpen, setIsNavOpen] = useState(false);
-
-    const handleNavToggle = () => {
-        setIsNavOpen(!isNavOpen);
-    };
-
-    const handleNavClose = () => {
-        setIsNavOpen(false);
-    };
-
+    
     // Responsive
     const isPC = useMediaQuery({
         query: '(min-width: 1024px)',
@@ -44,7 +35,17 @@ function Header() {
 
     const isMobile = useMediaQuery({
         query: '(max-width: 767px)',
-    });
+    });  
+    
+    // function
+    const handleNavToggle = () => {
+        setIsNavOpen(!isNavOpen);
+    };
+
+    const handleNavClose = () => {
+        setIsNavOpen(false);
+    };
+
 
     const handleClick = (event) => {
         const section = event.target.hash.substr(1);
