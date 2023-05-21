@@ -58,4 +58,20 @@
             }
         }
     }
+} 
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    .about {  
+        height: unset; 
+        .about-wrapper { 
+            padding: 20px; 
+            img { 
+                display: none;
+            } 
+            .about-infor { 
+                width: 100%;
+            }
+        } 
+    }
 }
