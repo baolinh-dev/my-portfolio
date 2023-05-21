@@ -5,7 +5,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DarkModeToggle from './DarkModeToggle';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
@@ -18,16 +18,16 @@ function Header() {
     const [projectsElement, setProjectsElement] = useState(null);
     const [contactElement, setContactElement] = useState(null);
     const [headerElement, setHeaderElement] = useState(null);
-
+    const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
     };
 
-    const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-
-    
+    const handleNavClose = () => {
+        setIsNavOpen(false);
+    };
 
     // Responsive
     const isPC = useMediaQuery({
@@ -58,6 +58,7 @@ function Header() {
         } else if (section === 'contact') {
             scroll.scrollTo(contactElement.offsetTop);
         }
+        setIsNavOpen(false);
     };
 
     useEffect(() => {
@@ -165,7 +166,7 @@ function Header() {
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
                         <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />
-                        <nav className={cx('nav', `nav ${isNavOpen ? 'nav-open' : ''}`)}>
+                        <nav id="header" className={cx('nav-mobile', `nav-mobile ${isNavOpen ? 'nav-open' : ''}`)}>
                             <ul>
                                 <li>
                                     <a
@@ -211,6 +212,11 @@ function Header() {
                                         Contact
                                     </a>
                                 </li>
+                                <li>
+                                    <div className={cx('button-close')}>
+                                        <FontAwesomeIcon icon={faClose} onClick={handleNavClose}/>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -219,8 +225,8 @@ function Header() {
                             <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
                         </div>
                     </div>
-                    <div> 
-                        <DarkModeToggle />
+                    <div>
+                        <DarkModeToggle notext />
                     </div>
                 </header>
             )}
