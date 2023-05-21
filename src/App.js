@@ -10,15 +10,9 @@ import Contact from './components/Contact';
 
 function App() { 
     AOS.init({ duration: 1000 });
-
-
-
-
-
     return (
         <>
             <Header />
-            
             <Home />
             <About />
             <Projects />

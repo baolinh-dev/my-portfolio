@@ -1,17 +1,17 @@
 import Toggle from 'react-toggle';
+import 'react-toggle/style.css';
 import { useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DarkModeToggle from './DarkModeToggle';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-    
-    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode') === 'true' ? true : false);
     const [activeSection, setActiveSection] = useState('home');
     const [homeElement, setHomeElement] = useState(null);
     const [aboutElement, setAboutElement] = useState(null);
@@ -23,36 +23,11 @@ function Header() {
 
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
-    }; 
+    };
 
+    const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
 
-    useEffect(() => {
-        localStorage.setItem('isDarkMode', isDarkMode);
-    }, [isDarkMode]); 
-
-    useEffect(() => { 
-        const header = document.querySelector('#header');  
-        const links = header.querySelectorAll('a');
-
-        if (isDarkMode) {
-            document.body.classList.add('dark');
-            header.classList.add('dark-header');
-            links.forEach((link) => {
-                link.classList.add('dark-header-link');
-            });
-        } else {
-            document.body.classList.remove('dark');
-            header.classList.remove('dark-header');
-            links.forEach((link) => {
-                link.classList.remove('dark-header-link');
-            });
-        }
-    }, [isDarkMode]);
-
-    function handleToggleChange() {
-        setIsDarkMode(!isDarkMode);
-        
-    }
+    
 
     // Responsive
     const isPC = useMediaQuery({
@@ -97,7 +72,6 @@ function Header() {
         const handleScroll = () => {
             if (homeElement && aboutElement && projectsElement && contactElement && headerElement) {
                 const currentPosition = window.scrollY + headerElement.offsetHeight;
-                console.log(currentPosition);
                 if (
                     homeElement.offsetTop <= currentPosition &&
                     homeElement.offsetTop + homeElement.offsetHeight > currentPosition
@@ -127,7 +101,6 @@ function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [homeElement, aboutElement, projectsElement, contactElement, headerElement]);
-
     return (
         <>
             {isPCandTable ? (
@@ -184,12 +157,9 @@ function Header() {
                                 </a>
                             </li>
                         </ul>
-                    </nav> 
+                    </nav>
                     {/* Dark / Light Mode */}
-                    <div className={cx('dark-mode-toggle')}>
-                        <Toggle defaultChecked={isDarkMode} icons={false} onChange={handleToggleChange} />
-                        <span className={cx('text')}>{isDarkMode ? 'Light ' : 'Dark '}</span>
-                    </div>
+                    <DarkModeToggle />
                 </header>
             ) : (
                 <header id="header" className={cx('header-mobile')}>
@@ -249,7 +219,9 @@ function Header() {
                             <img src={process.env.PUBLIC_URL + '/logo.jpeg'} alt="logo" />
                         </div>
                     </div>
-                    <div></div>
+                    <div> 
+                        <DarkModeToggle />
+                    </div>
                 </header>
             )}
         </>
