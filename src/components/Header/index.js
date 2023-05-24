@@ -5,10 +5,12 @@ import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DarkModeToggle from './DarkModeToggle';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames/bind';
+import classNames from 'classnames/bind'; 
 import styles from './Header.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles); 
+
+console.log(styles);
 
 function Header() {
     const [activeSection, setActiveSection] = useState('home');
@@ -118,7 +120,7 @@ function Header() {
                                 <a
                                     href="#home"
                                     onClick={handleClick}
-                                    className={`${activeSection === 'home' ? 'active' : ''}${
+                                    className={`navi-link ${activeSection === 'home' ? 'active' : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -129,7 +131,7 @@ function Header() {
                                 <a
                                     href="#about"
                                     onClick={handleClick}
-                                    className={`${activeSection === 'about' ? 'active' : ''}${
+                                    className={`navi-link ${activeSection === 'about' ? 'active' : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -140,7 +142,7 @@ function Header() {
                                 <a
                                     href="#projects"
                                     onClick={handleClick}
-                                    className={`${activeSection === 'projects' ? 'active' : ''}${
+                                    className={`navi-link ${activeSection === 'projects' ? 'active' : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -151,7 +153,7 @@ function Header() {
                                 <a
                                     href="#contact"
                                     onClick={handleClick}
-                                    className={`${activeSection === 'contact' ? 'active' : ''}${
+                                    className={`navi-link ${activeSection === 'contact' ? 'active' : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -184,7 +186,7 @@ function Header() {
                                     <a
                                         href="#about"
                                         onClick={handleClick}
-                                        className={`${activeSection === 'about' ? 'active' : ''}${
+                                        className={`${activeSection === 'about' ? ' active' : ''}${
                                             isDarkMode ? ' dark-header-link' : ''
                                         }`}
                                     >

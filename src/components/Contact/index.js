@@ -1,9 +1,8 @@
 import Title from '../Common/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Contact.module.scss';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function Contact() {

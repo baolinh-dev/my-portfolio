@@ -1,3 +1,4 @@
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -20,7 +21,6 @@
             padding: 4px;
         }
     }
-
     .nav {
         height: var(--height-header);
 
@@ -37,7 +37,10 @@
                     padding: 16px;
                     font-weight: 600;
                     position: relative;
-                    margin-right: 20px;
+                    margin-right: 20px; 
+                    &.active { 
+                        border-bottom: 4px solid var(--primary);
+                    }
                 }
             }
         }
@@ -61,7 +64,7 @@
         height: 24px;
         svg {
             width: 24px;
-            height: 24px; 
+            height: 24px;
         }
         .nav-mobile {
             position: fixed;
@@ -84,8 +87,11 @@
                     text-align: center;
                     a {
                         width: 100%;
-                        text-align: center;
-                    }
+                        text-align: center; 
+                        &.active {
+                            border-bottom: 4px solid var(--primary);
+                          }
+                    } 
                 }
             }
             .button-close {
@@ -99,22 +105,22 @@
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
-                justify-content: center; 
-                svg { 
-                  width: 20px; 
-                  height: 20px;
+                justify-content: center;
+                svg {
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }
     }
     .logo-mobile {
         width: 40px;
-        height: 40px;  
+        height: 40px;
         border-radius: 50%;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
         img {
             width: 40px;
-            height: 40px; 
+            height: 40px;
             padding: 4px;
             border-radius: 50%;
         }
