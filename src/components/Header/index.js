@@ -10,8 +10,6 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles); 
 
-console.log(styles);
-
 function Header() {
     const [activeSection, setActiveSection] = useState('home');
     const [homeElement, setHomeElement] = useState(null);
@@ -20,7 +18,10 @@ function Header() {
     const [contactElement, setContactElement] = useState(null);
     const [headerElement, setHeaderElement] = useState(null);
     const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isNavOpen, setIsNavOpen] = useState(false); 
+    // className
+    const naviLink = cx('navi-link'); 
+    const active = cx('active'); 
     
     // Responsive
     const isPC = useMediaQuery({
@@ -71,7 +72,7 @@ function Header() {
         setContactElement(document.getElementById('contact'));
         setHeaderElement(document.getElementById('header'));
     }, []);
-
+    // scroll to active navigation
     useEffect(() => {
         const handleScroll = () => {
             if (homeElement && aboutElement && projectsElement && contactElement && headerElement) {
@@ -120,7 +121,7 @@ function Header() {
                                 <a
                                     href="#home"
                                     onClick={handleClick}
-                                    className={`navi-link ${activeSection === 'home' ? 'active' : ''}${
+                                    className={`${naviLink} ${activeSection === 'home' ? active : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -131,7 +132,7 @@ function Header() {
                                 <a
                                     href="#about"
                                     onClick={handleClick}
-                                    className={`navi-link ${activeSection === 'about' ? 'active' : ''}${
+                                    className={`${naviLink} ${activeSection === 'about' ? active : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -142,7 +143,7 @@ function Header() {
                                 <a
                                     href="#projects"
                                     onClick={handleClick}
-                                    className={`navi-link ${activeSection === 'projects' ? 'active' : ''}${
+                                    className={`${naviLink} ${activeSection === 'projects' ? active : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >
@@ -153,7 +154,7 @@ function Header() {
                                 <a
                                     href="#contact"
                                     onClick={handleClick}
-                                    className={`navi-link ${activeSection === 'contact' ? 'active' : ''}${
+                                    className={`${naviLink} ${activeSection === 'contact' ? active : ''}${
                                         isDarkMode ? ' dark-header-link' : ''
                                     }`}
                                 >

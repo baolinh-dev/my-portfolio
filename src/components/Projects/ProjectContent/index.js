@@ -4,11 +4,13 @@ import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './ProjectContent.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles); 
 
 function ProjectContent({ content, infor, imgSrc, images, revert, sourceCode, liveDemo }) { 
+    const projectContentClass = cx('project-content');  
+    const revertClass = revert ? cx('revert') : '';
     return (
-        <div className={cx('project-content', { revert: revert })}>
+        <div className={`${projectContentClass} ${revertClass}`}>
             <div className={cx('project-img')} data-aos={revert ? 'fade-left' : 'fade-right'}>
                 <img src={imgSrc} alt="" /> 
             </div>

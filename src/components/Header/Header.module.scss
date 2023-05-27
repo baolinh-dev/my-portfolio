@@ -33,7 +33,7 @@
                 list-style: none;
                 text-align: center;
 
-                a {
+                .navi-link {
                     padding: 16px;
                     font-weight: 600;
                     position: relative;
@@ -90,7 +90,7 @@
                         text-align: center; 
                         &.active {
                             border-bottom: 4px solid var(--primary);
-                          }
+                        }
                     } 
                 }
             }

@@ -12,13 +12,34 @@
 
     --background-dark-header: #1f1f1f;
     --text-dark-header: #ececec;
+} 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-// light/dark modde
-body.light {
-    background-color: var(--background-light);
-    color: var(--text-light);
+html {
+    font-size: 62.5%;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+}  
+// remove default css
+a {
+    text-decoration: none;
+    color: #1f1f1f;
+}
+.react-toggle {
+    margin-right: 8px !important;
+}
+.nav-open {
+    transform: translateX(0) !important;
+}
+// light/dark modde
 body.dark {
     background-color: var(--background-dark);
     color: var(--text-dark);
@@ -35,35 +56,5 @@ body.dark {
 #header a.dark-header-link {
     color: var(--text-dark-header);
 }
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-html {
-    font-size: 62.5%;
-}
 
-body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizespeed;
-}
-// remove default css
-a {
-    text-decoration: none;
-    color: #1f1f1f;
-}
-.active {
-    border-bottom: 4px solid var(--primary);
-}
-.revert {
-    flex-direction: row-reverse;
-}
-.react-toggle {
-    margin-right: 8px !important;
-}
-.nav-open {
-    transform: translateX(0) !important;
-}
+
