@@ -67,17 +67,27 @@
         height: unset;
         .about-wrapper {
             padding: 20px;
-            img {
+            .about-wrapper-img {
                 display: none;
             }
             .about-infor {
                 width: 100%;
                 h2 {
-                    font-size: 20px;
+                    font-size: 28px;
                 }
                 p {
-                    font-size: 16px;
+                    font-size: 20px;
+                    text-align: justify;
+                } 
+                .heading-sub {
+                    font-size: 24px;
                 }
+            }
+        }
+        .list {
+            li {
+                font-weight: 600;
+                font-size: 16px;
             }
         }
     }

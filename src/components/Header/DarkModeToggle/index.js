@@ -11,22 +11,18 @@ function DarkModeToggle({ notext }) {
     }, [isDarkMode]);
 
     useEffect(() => {
-        const header = document.querySelector('#header');
-        const headerNavMobile = document.querySelector('#header .nav-mobile');
-
-        const links = header.querySelectorAll('a');
+        const header = document.querySelector('#header'); 
+        const links = header.querySelectorAll('a'); 
 
         if (isDarkMode) {
-            document.body.classList.add('dark');
+            document.body.classList.add('dark');   
             header.classList.add('dark-header');
-            headerNavMobile && headerNavMobile.classList.add('dark-header');
             links.forEach((link) => {
                 link.classList.add('dark-header-link');
             });
         } else {
             document.body.classList.remove('dark');
             header.classList.remove('dark-header');
-            headerNavMobile && headerNavMobile.classList.remove('dark-header');
             links.forEach((link) => {
                 link.classList.remove('dark-header-link');
             });

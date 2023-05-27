@@ -112,7 +112,7 @@ function Projects() {
             ) : (
                 <>
                     <Title content="Projects" sm />
-                    <Slider {...settings}>
+                    <Slider {...settings} style={{ padding: '0 20px' }}>
                         <ProjectSliderItem
                             content="Viet Nam Football"
                             infor="

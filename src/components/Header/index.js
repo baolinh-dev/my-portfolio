@@ -5,10 +5,10 @@ import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DarkModeToggle from './DarkModeToggle';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames/bind'; 
+import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
-const cx = classNames.bind(styles); 
+const cx = classNames.bind(styles);
 
 function Header() {
     const [activeSection, setActiveSection] = useState('home');
@@ -18,12 +18,12 @@ function Header() {
     const [contactElement, setContactElement] = useState(null);
     const [headerElement, setHeaderElement] = useState(null);
     const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    const [isNavOpen, setIsNavOpen] = useState(false); 
+    const [isNavOpen, setIsNavOpen] = useState(false);
     // className
-    const naviLink = cx('navi-link'); 
-    const active = cx('active');  
-    const navOpen = cx('nav-open'); 
-    
+    const naviLink = cx('navi-link');
+    const active = cx('active');
+    const navOpen = cx('nav-open');
+
     // Responsive
     const isPC = useMediaQuery({
         query: '(min-width: 1024px)',
@@ -39,8 +39,8 @@ function Header() {
 
     const isMobile = useMediaQuery({
         query: '(max-width: 767px)',
-    });  
-    
+    });
+
     // function
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
@@ -49,7 +49,6 @@ function Header() {
     const handleNavClose = () => {
         setIsNavOpen(false);
     };
-
 
     const handleClick = (event) => {
         const section = event.target.hash.substr(1);
@@ -171,13 +170,13 @@ function Header() {
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
                         <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />
-                        <nav id="header" className={cx('nav-mobile', `${isNavOpen ? navOpen : ''}`)}>
+                        <nav className={cx('nav-mobile', `${isNavOpen ? navOpen : ''}`)}>
                             <ul>
                                 <li>
                                     <a
                                         href="#home"
                                         onClick={handleClick}
-                                        className={`${activeSection === 'home' ? 'active' : ''}${
+                                        className={`${naviLink} ${activeSection === 'home' ? active : ''}${
                                             isDarkMode ? ' dark-header-link' : ''
                                         }`}
                                     >
@@ -188,7 +187,7 @@ function Header() {
                                     <a
                                         href="#about"
                                         onClick={handleClick}
-                                        className={`${activeSection === 'about' ? ' active' : ''}${
+                                        className={`${naviLink} ${activeSection === 'about' ? active : ''}${
                                             isDarkMode ? ' dark-header-link' : ''
                                         }`}
                                     >
@@ -199,7 +198,7 @@ function Header() {
                                     <a
                                         href="#projects"
                                         onClick={handleClick}
-                                        className={`${activeSection === 'projects' ? 'active' : ''}${
+                                        className={`${naviLink} ${activeSection === 'projects' ? active : ''}${
                                             isDarkMode ? ' dark-header-link' : ''
                                         }`}
                                     >
@@ -210,7 +209,7 @@ function Header() {
                                     <a
                                         href="#contact"
                                         onClick={handleClick}
-                                        className={`${activeSection === 'contact' ? 'active' : ''}${
+                                        className={`${naviLink} ${activeSection === 'contact' ? active : ''}${
                                             isDarkMode ? ' dark-header-link' : ''
                                         }`}
                                     >
@@ -219,7 +218,7 @@ function Header() {
                                 </li>
                                 <li>
                                     <div className={cx('button-close')}>
-                                        <FontAwesomeIcon icon={faClose} onClick={handleNavClose}/>
+                                        <FontAwesomeIcon icon={faClose} onClick={handleNavClose} />
                                     </div>
                                 </li>
                             </ul>
