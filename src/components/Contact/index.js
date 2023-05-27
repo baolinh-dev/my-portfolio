@@ -2,7 +2,8 @@ import Title from '../Common/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import styles from './Contact.module.scss';
+import styles from './Contact.module.scss'; 
+import Button from '../Common/Button';
 const cx = classNames.bind(styles);
 
 function Contact() {
@@ -24,8 +25,8 @@ function Contact() {
                 <form data-aos='fade-left' className={cx('contact-form')}>
                     <input placeholder="Name" type="text" id="name" name="name" required />
                     <input placeholder="Email" type="email" id="email" name="email" required />
-                    <textarea placeholder="Message" id="message" name="message" required></textarea>
-                    <button type="submit">Submit</button>
+                    <textarea placeholder="Message" id="message" name="message" required></textarea> 
+                    <Button>Submit</Button>
                 </form>
             </div>
         </div>
