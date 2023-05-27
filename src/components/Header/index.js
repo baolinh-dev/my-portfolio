@@ -21,7 +21,8 @@ function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false); 
     // className
     const naviLink = cx('navi-link'); 
-    const active = cx('active'); 
+    const active = cx('active');  
+    const navOpen = cx('nav-open'); 
     
     // Responsive
     const isPC = useMediaQuery({
@@ -170,7 +171,7 @@ function Header() {
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
                         <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />
-                        <nav id="header" className={cx('nav-mobile', `nav-mobile ${isNavOpen ? 'nav-open' : ''}`)}>
+                        <nav id="header" className={cx('nav-mobile', `${isNavOpen ? navOpen : ''}`)}>
                             <ul>
                                 <li>
                                     <a
