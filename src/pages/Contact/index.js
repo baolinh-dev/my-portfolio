@@ -1,9 +1,9 @@
-import Title from '../Common/Title';
+import Title from '~/components/Common/Title';
+import Button from '~/components/Common/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Contact.module.scss'; 
-import Button from '../Common/Button';
 const cx = classNames.bind(styles);
 
 function Contact() {

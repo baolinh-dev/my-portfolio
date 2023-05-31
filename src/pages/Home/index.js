@@ -2,7 +2,7 @@ import Typewriter from 'typewriter-effect';
 import { animateScroll as scroll } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
-import Button from '../Common/Button';
+import Button from '../../components/Common/Button';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 

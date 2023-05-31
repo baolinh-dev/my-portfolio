@@ -1,9 +1,9 @@
-import { useMediaQuery } from 'react-responsive';
-import Title from '../Common/Title';
+import { useMediaQuery } from 'react-responsive'; 
+import Title from '~/components/Common/Title';
+import Button from '~/components/Common/Button';
 import classNames from 'classnames/bind';
 import ProjectContent from './ProjectContent';
 import ProjectSliderItem from './ProjectSliderItem';
-import Button from '../Common/Button';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

@@ -1,7 +1,7 @@
-import Title from '../Common/Title';
+import Title from '../../components/Common/Title';
 import classNames from 'classnames/bind';
 import styles from './About.module.scss';
-const cx = classNames.bind(styles); 
+const cx = classNames.bind(styles);
 const skills = [
     { name: 'HTML', icon: 'https://img.icons8.com/color/48/null/html-5--v1.png' },
     { name: 'CSS', icon: 'https://img.icons8.com/color/48/null/css3.png' },
@@ -13,15 +13,19 @@ const skills = [
     { name: 'React', icon: 'https://img.icons8.com/plasticine/100/null/react.png' },
     { name: 'PHP', icon: 'https://img.icons8.com/ios-filled/50/null/php-logo.png' },
     { name: 'MySQL', icon: 'https://img.icons8.com/color/48/null/mysql-logo.png' },
-    { name: 'MongoDB', icon: 'https://img.icons8.com/color/48/null/mongodb.png' }, 
-    { name: 'Java', icon: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-64.png' }
+    { name: 'MongoDB', icon: 'https://img.icons8.com/color/48/null/mongodb.png' },
+    { name: 'Java', icon: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-64.png' },
 ];
 function About() {
     return (
         <div className={cx('about')} id="about">
-            <Title content="About"/>
+            <Title content="About" />
             <div className={cx('about-wrapper')}>
-                <img className={cx('about-wrapper-img')} data-aos="fade-right" src="https://baolinh-dev.github.io/portfolio/assets/imgs/about-image.jpg" />
+                <img
+                    className={cx('about-wrapper-img')}
+                    data-aos="fade-right"
+                    src="https://baolinh-dev.github.io/portfolio/assets/imgs/about-image.jpg"
+                />
                 <div data-aos="fade-left" className={cx('about-infor')}>
                     <h2>About me</h2>
                     <p>
@@ -45,7 +49,7 @@ function About() {
                                 <span>{skill.name}</span>
                             </li>
                         ))}
-                    </ul> 
+                    </ul>
                 </div>
             </div>
         </div>
