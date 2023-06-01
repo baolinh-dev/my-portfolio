@@ -18,38 +18,31 @@ function Header() {
     const [contactElement, setContactElement] = useState(null);
     const [headerElement, setHeaderElement] = useState(null);
     const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isNavOpen, setIsNavOpen] = useState(false); 
     // className
     const naviLink = cx('navi-link');
     const active = cx('active');
     const navOpen = cx('nav-open');
-
     // Responsive
     const isPC = useMediaQuery({
         query: '(min-width: 1024px)',
     });
-
     const isPCandTable = useMediaQuery({
         query: '(min-width: 768px)',
     });
-
     const isTablet = useMediaQuery({
         query: '(min-width: 768px) and (max-width: 1023px)',
     });
-
     const isMobile = useMediaQuery({
         query: '(max-width: 767px)',
     });
-
     // function
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
     };
-
     const handleNavClose = () => {
         setIsNavOpen(false);
     };
-
     const handleClick = (event) => {
         const section = event.target.hash.substr(1);
 
@@ -64,7 +57,6 @@ function Header() {
         }
         setIsNavOpen(false);
     };
-
     useEffect(() => {
         setHomeElement(document.getElementById('home'));
         setAboutElement(document.getElementById('about'));
@@ -100,7 +92,6 @@ function Header() {
                 }
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);

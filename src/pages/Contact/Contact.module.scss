@@ -25,17 +25,14 @@
                 font-size: 18px;
             }
         }
-
         .contact-form {
             margin: 40px auto 0;
             max-width: 400px;
             width: 50%;
-
             label {
                 display: block;
                 margin-bottom: 10px;
             }
-
             input,
             textarea {
                 display: block;
@@ -46,14 +43,12 @@
                 border-radius: 5px;
                 margin-bottom: 20px;
             }
-
             button[type='submit'] {
                 float: right; 
             }
         }
     }
 }
-
 // Mobile
 @media only screen and (max-width: 767px) {
     .contact {

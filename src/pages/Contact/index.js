@@ -3,7 +3,8 @@ import Button from '~/components/Common/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import styles from './Contact.module.scss'; 
+import styles from './Contact.module.scss';  
+
 const cx = classNames.bind(styles);
 
 function Contact() {

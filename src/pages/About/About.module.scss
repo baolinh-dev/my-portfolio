@@ -4,35 +4,29 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     .about-wrapper {
         display: flex;
         padding: 0 80px;
         justify-content: center;
         align-items: center;
         margin-top: 40px;
-
         img {
             width: 40%;
             height: 400px;
             border-radius: 20px;
             margin-right: 40px;
         }
-
         .about-infor {
             width: 60%;
-
             h2 {
                 text-align: left;
                 font-size: 24px;
             }
-
             p {
                 text-align: left;
                 font-size: 20px;
                 margin-bottom: 12px;
             }
-
             .heading-sub {
                 font-size: 20px;
             }
@@ -41,7 +35,6 @@
     .list {
         display: flex;
         flex-wrap: wrap;
-
         li {
             display: flex;
             align-items: center;
@@ -51,7 +44,6 @@
             list-style: none;
             margin-top: 12px;
             margin-right: 20px;
-
             img {
                 width: 40px;
                 height: 40px;
@@ -60,7 +52,6 @@
         }
     }
 }
-
 // Mobile
 @media only screen and (max-width: 767px) {
     .about {

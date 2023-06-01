@@ -1,7 +1,14 @@
 import { useMediaQuery } from 'react-responsive';
 import Title from '~/components/Common/Title';
 import Button from '~/components/Common/Button';
-import { skillIcons, vietnamProject, panageaProject, teahouseProject, pizzaProject, downloadCV} from '~/components/Constant'; 
+import {
+    skillIcons,
+    vietnamProject,
+    panageaProject,
+    teahouseProject,
+    pizzaProject,
+    downloadCV,
+} from '~/components/Constant';
 import classNames from 'classnames/bind';
 import ProjectContent from './ProjectContent';
 import ProjectSliderItem from './ProjectSliderItem';
@@ -10,6 +17,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Projects.module.scss';
 
+const cx = classNames.bind(styles);  
+
+// constants
 const [
     htmlIcon,
     cssIcon,
@@ -22,9 +32,7 @@ const [
     mysqlIcon,
     mongodbIcon,
     javaIcon,
-] = skillIcons;
-const cx = classNames.bind(styles);
-
+] = skillIcons; 
 // setting slider
 const settingSliders = {
     dots: true,
@@ -33,21 +41,17 @@ const settingSliders = {
     slidesToShow: 1,
     slidesToScroll: 1,
 };
-
 function Projects() {
     // Responsive
     const isPC = useMediaQuery({
         query: '(min-width: 1024px)',
     });
-
     const isPCandTable = useMediaQuery({
         query: '(min-width: 768px)',
     });
-
     const isTablet = useMediaQuery({
         query: '(min-width: 768px) and (max-width: 1023px)',
     });
-
     const isMobile = useMediaQuery({
         query: '(max-width: 767px)',
     });
@@ -72,7 +76,7 @@ function Projects() {
                         images={[htmlIcon, cssIcon, javascriptIcon]}
                         sourceCode={panageaProject.sourceCode}
                         liveDemo={panageaProject.liveDemo}
-                    /> 
+                    />
                     <ProjectContent
                         content={teahouseProject.content}
                         infor={teahouseProject.infor}
@@ -80,7 +84,7 @@ function Projects() {
                         images={[nodejsIcon, sassIcon, mongodbIcon]}
                         sourceCode={teahouseProject.sourceCode}
                         liveDemo={teahouseProject.liveDemo}
-                    /> 
+                    />
                     <ProjectContent
                         revert
                         content={pizzaProject.content}
@@ -91,10 +95,7 @@ function Projects() {
                         liveDemo={pizzaProject.liveDemo}
                     />
                     <div className={cx('projects-button')}>
-                        <Button
-                            download
-                            href={downloadCV}
-                        >
+                        <Button download href={downloadCV}>
                             Download CV
                         </Button>
                     </div>

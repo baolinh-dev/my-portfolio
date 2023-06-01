@@ -1,7 +1,8 @@
 import Title from '../../components/Common/Title';
 import classNames from 'classnames/bind';
 import styles from './About.module.scss';
-import {skills} from '~/components/Constant' 
+import {skills} from '~/components/Constant'  
+
 const cx = classNames.bind(styles); 
 
 function About() {

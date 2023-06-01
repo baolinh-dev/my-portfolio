@@ -8,7 +8,6 @@
     z-index: 999;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
-
     .logo {
         height: 100%;
         padding: 8px 0;
@@ -23,14 +22,11 @@
     .nav {
         ul {
             height: 100%;
-
             display: flex;
             align-items: center;
-
             li {
                 list-style: none;
                 text-align: center;
-
                 .navi-link {
                     padding: 16px;
                     font-weight: 600;
