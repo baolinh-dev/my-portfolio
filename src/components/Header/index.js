@@ -1,9 +1,9 @@
 import 'react-toggle/style.css';
-import { useEffect, useState } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
-import { useMediaQuery } from 'react-responsive';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DarkModeToggle from './DarkModeToggle';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { animateScroll as scroll } from 'react-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -157,7 +157,8 @@ function Header() {
                     {/* Dark / Light Mode */}
                     <DarkModeToggle />
                 </header>
-            ) : (
+            ) : ( 
+                // UI Mobile
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
                         <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />

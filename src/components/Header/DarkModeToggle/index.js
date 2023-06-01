@@ -1,7 +1,8 @@
+import Toggle from 'react-toggle';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import styles from './DarkModeToggle.module.scss';
-import Toggle from 'react-toggle';
+import styles from './DarkModeToggle.module.scss'; 
+
 const cx = classNames.bind(styles);
 
 function DarkModeToggle({ notext }) {

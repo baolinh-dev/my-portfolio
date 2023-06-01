@@ -1,6 +1,11 @@
-import { useMediaQuery } from 'react-responsive';
 import Title from '~/components/Common/Title';
 import Button from '~/components/Common/Button';
+import Slider from 'react-slick';
+import ProjectContent from './ProjectContent';
+import ProjectSliderItem from './ProjectSliderItem';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useMediaQuery } from 'react-responsive';
 import {
     skillIcons,
     vietnamProject,
@@ -10,11 +15,6 @@ import {
     downloadCV,
 } from '~/components/Constant';
 import classNames from 'classnames/bind';
-import ProjectContent from './ProjectContent';
-import ProjectSliderItem from './ProjectSliderItem';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import styles from './Projects.module.scss';
 
 const cx = classNames.bind(styles);  
