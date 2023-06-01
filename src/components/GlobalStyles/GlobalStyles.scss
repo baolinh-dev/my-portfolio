@@ -28,21 +28,23 @@ body {
     line-height: 1.5;
     text-rendering: optimizespeed;
 }  
-// light/dark modde
+// light/dark modde 
+body { 
+    transition: color 0.3s ease-in-out;
+}
 body.dark {
     background-color: var(--background-dark);
     color: var(--text-dark);
+} 
+.dark-header-link { 
+    color: unset !important; 
 }
-
 .header-mobile nav .dark-header {
     background-color: var(--background-dark-header);
     color: var(--text-dark-header);
 } 
 #header.dark-header {
     background-color: var(--background-dark-header);
-    color: var(--text-dark-header);
-} 
-#header a.dark-header-link {
     color: var(--text-dark-header);
 } 
 // remove default css
