@@ -18,7 +18,7 @@ function Header() {
     const [contactElement, setContactElement] = useState(null);
     const [headerElement, setHeaderElement] = useState(null);
     const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    const [isNavOpen, setIsNavOpen] = useState(false); 
+    const [isNavOpen, setIsNavOpen] = useState(false);  
     // className
     const naviLink = cx('navi-link');
     const active = cx('active');
@@ -162,7 +162,7 @@ function Header() {
                 <header id="header" className={cx('header-mobile')}>
                     <div className={cx('menu-mobile')}>
                         <FontAwesomeIcon icon={faBars} onClick={handleNavToggle} />
-                        <nav className={cx('nav-mobile', `${isNavOpen ? navOpen : ''}`)}>
+                        <nav className={cx('nav-mobile', { [navOpen]: isNavOpen, 'dark-header': isDarkMode })}>
                             <ul>
                                 <li>
                                     <a

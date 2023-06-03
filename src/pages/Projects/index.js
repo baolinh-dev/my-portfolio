@@ -17,7 +17,7 @@ import {
 import classNames from 'classnames/bind';
 import styles from './Projects.module.scss';
 
-const cx = classNames.bind(styles);  
+const cx = classNames.bind(styles);
 
 // constants
 const [
@@ -32,7 +32,7 @@ const [
     mysqlIcon,
     mongodbIcon,
     javaIcon,
-] = skillIcons; 
+] = skillIcons;
 // setting slider
 const settingSliders = {
     dots: true,
@@ -101,7 +101,7 @@ function Projects() {
                     </div>
                 </div>
             ) : (
-                <>
+                <div className={cx('projects')} id="projects">
                     <Title content="Projects" sm />
                     <Slider {...settingSliders} style={{ padding: '0 20px' }}>
                         <ProjectSliderItem
@@ -139,7 +139,7 @@ function Projects() {
                             liveDemo={pizzaProject.liveDemo}
                         />
                     </Slider>
-                </>
+                </div>
             )}
         </>
     );

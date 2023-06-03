@@ -3,7 +3,7 @@
 
 :root {
     --primary: #fe2c55;
-    --height-header: 63px;
+    --height-header: 80px;
 
     --background-light: #fff;
     --text-light: #1c1c1c;
@@ -35,6 +35,14 @@ body {
 body.dark {
     background-color: var(--background-dark);
     color: var(--text-dark);
+}  
+.dark {
+    background-color: var(--background-dark) !important;
+    color: var(--text-dark) !important;
+}  
+.dark-header {
+    background-color: var(--background-dark-header) !important;
+    color: var(--text-dark-header) !important;
 } 
 .dark-header-link { 
     color: unset !important; 

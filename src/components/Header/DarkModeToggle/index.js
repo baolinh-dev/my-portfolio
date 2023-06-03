@@ -15,18 +15,23 @@ function DarkModeToggle({ notext }) {
         const body = document.body;
         const links = body.querySelectorAll('a'); // Lấy tất cả thẻ <a> nằm trong thẻ <body>  \
         const buttons = body.querySelectorAll('button'); // Lấy tất cả thẻ <p> nằm trong thẻ <body>
-        
+        const navs = body.querySelectorAll('nav');  
+
+        console.log(navs); 
+
         const header = document.querySelector('#header');
 
         if (isDarkMode) {
-            console.log(body);
             body.classList.add('dark'); 
             links.forEach((link) => {
                 link.classList.add('dark-header-link');
             }); 
             buttons.forEach((button) => {
                 button.classList.add('dark-header-link');
-            });
+            });  
+            navs.forEach((nav) => {
+                nav.classList.add('dark-header');
+            }); 
             header.classList.add('dark-header'); 
         } else {
             body.classList.remove('dark'); 
@@ -35,7 +40,10 @@ function DarkModeToggle({ notext }) {
             }); 
             buttons.forEach((button) => {
                 button.classList.remove('dark-header-link');
-            });
+            }); 
+            navs.forEach((nav) => {
+                nav.classList.remove('dark-header');
+            }); 
             header.classList.remove('dark-header');
         }
     }, [isDarkMode]);

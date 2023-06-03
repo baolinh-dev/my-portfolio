@@ -1,5 +1,6 @@
 .header {
     display: flex;
+    height: var(--height-header);
     justify-content: space-around;
     position: fixed;
     top: 0;
@@ -27,8 +28,13 @@
             li {
                 list-style: none;
                 text-align: center;
+                display: block;
+                height: 100%;
                 .navi-link {
-                    padding: 16px;
+                    display: block;
+                    height: 100%; 
+                    line-height: var(--height-header); 
+                    padding: 0 20px;
                     font-weight: 600;
                     position: relative;
                     margin-right: 20px;
@@ -84,9 +90,9 @@
                     text-align: center;
                     .navi-link {
                         width: 100%;
-                        text-align: center; 
-                        font-weight: 600; 
-                        font-size: 20px; 
+                        text-align: center;
+                        font-weight: 600;
+                        font-size: 20px;
                         padding: 16px 0;
                         &.active {
                             border-bottom: 4px solid var(--primary);
