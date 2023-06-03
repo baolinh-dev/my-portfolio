@@ -1,9 +1,9 @@
-import Toggle from 'react-toggle';
+import Toggle from 'react-toggle'; 
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './DarkModeToggle.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles); 
 
 function DarkModeToggle({ notext }) {
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode') === 'true' ? true : false);
@@ -16,9 +16,6 @@ function DarkModeToggle({ notext }) {
         const links = body.querySelectorAll('a'); // Lấy tất cả thẻ <a> nằm trong thẻ <body>  \
         const buttons = body.querySelectorAll('button'); // Lấy tất cả thẻ <p> nằm trong thẻ <body>
         const navs = body.querySelectorAll('nav');  
-
-        console.log(navs); 
-
         const header = document.querySelector('#header');
 
         if (isDarkMode) {

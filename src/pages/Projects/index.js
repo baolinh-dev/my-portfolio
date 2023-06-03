@@ -40,7 +40,9 @@ const settingSliders = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-};
+    prevArrow: <button className="slick-prev"><i className="fas fa-chevron-left"></i></button>,
+    nextArrow: <button className="slick-next"><i className="fas fa-chevron-right"></i></button>,
+  };
 function Projects() {
     // Responsive
     const isPC = useMediaQuery({
@@ -56,7 +58,8 @@ function Projects() {
         query: '(max-width: 767px)',
     });
     return (
-        <>
+        <>  
+            {/* PC UI */}
             {isPCandTable ? (
                 <div className={cx('projects')} id="projects">
                     <Title content="Projects" />
@@ -77,7 +80,8 @@ function Projects() {
                         sourceCode={panageaProject.sourceCode}
                         liveDemo={panageaProject.liveDemo}
                     />
-                    <ProjectContent
+                    <ProjectContent 
+                    undone
                         content={teahouseProject.content}
                         infor={teahouseProject.infor}
                         imgSrc={teahouseProject.imgSrc}
@@ -86,7 +90,8 @@ function Projects() {
                         liveDemo={teahouseProject.liveDemo}
                     />
                     <ProjectContent
-                        revert
+                        revert  
+                        undone
                         content={pizzaProject.content}
                         infor={pizzaProject.infor}
                         imgSrc={pizzaProject.imgSrc}
@@ -100,7 +105,9 @@ function Projects() {
                         </Button>
                     </div>
                 </div>
-            ) : (
+            ) :  
+                // Mobile UI
+                (
                 <div className={cx('projects')} id="projects">
                     <Title content="Projects" sm />
                     <Slider {...settingSliders} style={{ padding: '0 20px' }}>

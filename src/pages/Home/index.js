@@ -16,10 +16,10 @@ function Home() {
     return (
         <div className={cx('home')} id="home">
             <div className={cx('infor')}>
-                <p className={cx('greeting')}>Hi,</p>
-                <p className={cx('introduce')}>
+                <h1 className={cx('greeting')}>Hi,</h1>
+                <h1 className={cx('introduce')}>
                     I'm <span className={cx('name')}>Tran Bao Linh</span>{' '}
-                </p>
+                </h1>
                 <div className={cx('auto-write-wrapper')}>
                     <Typewriter
                         className={cx('auto-write')}

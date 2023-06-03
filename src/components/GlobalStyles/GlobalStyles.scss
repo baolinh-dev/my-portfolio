@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     --primary: #fe2c55;
@@ -13,7 +13,7 @@
 
     --background-dark-header: #1f1f1f;
     --text-dark-header: #ececec;
-} 
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -27,44 +27,77 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
-}  
-// light/dark modde 
-body { 
+}
+// light/dark modde
+body {
     transition: color 0.3s ease-in-out;
 }
 body.dark {
     background-color: var(--background-dark);
     color: var(--text-dark);
-}  
+}
 .dark {
     background-color: var(--background-dark) !important;
     color: var(--text-dark) !important;
-}  
+}
 .dark-header {
     background-color: var(--background-dark-header) !important;
     color: var(--text-dark-header) !important;
-} 
-.dark-header-link { 
-    color: unset !important; 
+}
+.dark-header-link {
+    color: unset !important;
 }
 .header-mobile nav .dark-header {
     background-color: var(--background-dark-header);
     color: var(--text-dark-header);
-} 
+}
 #header.dark-header {
     background-color: var(--background-dark-header);
     color: var(--text-dark-header);
-} 
+}
 // remove default css
 a {
     text-decoration: none;
     color: #1f1f1f;
-} 
-button { 
+}
+button {
     background-color: unset;
-} 
+}
 .active {
     border-bottom: 4px solid var(--primary);
 }
+/* Quy tắc cho thiết bị di động */
+@media only screen and (max-width: 480px) {
+    .Typewriter span {
+        font-size: 32px !important;
+    }
+    h2 {
+        font-size: 24px;
+    }
 
+    p {
+        font-size: 18px;
+    }
+}
+// Slider Custom
+.slick-prev,
+.slick-next {
+    border-radius: 50%;
+    background-color: var(--primary);
+    opacity: 0.8;
+    padding: 20px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
 
+.slick-prev {
+    left: 50px;
+}
+
+.slick-next {
+    right: 50px;
+}
