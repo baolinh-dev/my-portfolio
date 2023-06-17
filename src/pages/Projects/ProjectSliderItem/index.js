@@ -15,16 +15,6 @@ function ProjectSliderItem({ content, infor, imgSrc, images, revert, sourceCode,
             <div className={cx('project-infor')} data-aos={revert ? 'fade-right' : 'fade-left'}>
                 <h2>{content}</h2>
                 <p>{infor}</p>
-                <div className={cx('project-tech')}>
-                    <h3>Tech stack: </h3>
-                    <ul className={cx('project-images')}>
-                        {images.map((image, index) => (
-                            <li key={index}>
-                                <img src={image} alt="" />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
                 <div className={cx('project-code')}>
                     {sourceCode && (
                         <a target="_blank" href={sourceCode}>
